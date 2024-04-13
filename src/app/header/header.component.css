@@ -1,0 +1,92 @@
+nav {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 20px;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 600;
+  user-select: none;
+  cursor: pointer;
+}
+.logo span:nth-child(1) {
+  background-color: #7c83fd;
+  color: #fff;
+  border-radius: 5px;
+  /* the background of the letter C had padding on the top and bottom i couldnt remove which made the logo look bad so i used clip-path in order to make it look as close to the logo as possible. comment out the clip-path to see what i mean */
+  clip-path: inset(22% 0 13% 0);
+}
+.logo span:nth-child(2) {
+  color: #7c83fd;
+}
+
+:is(.nav-links, .nav-list) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-links li,
+a {
+  text-decoration: none;
+  color: #055052;
+  padding: 0 10px;
+  position: relative;
+  font-size: 1.1rem;
+  list-style: none;
+}
+.telefon {
+  background: #7c83fd;
+  color: #fff;
+  padding: 10px;
+  border-radius: 3px;
+}
+.telefon a {
+  text-decoration: none;
+  color: #fff;
+}
+.telefon .fas {
+  color: #fff;
+  font-size: 18px;
+}
+.nav-links li > a:hover {
+  color: #7c83fd;
+}
+.nav-links li > a:hover::after {
+  width: 100%;
+}
+.nav-links li > a::after {
+  content: "";
+  background: #7c83fd;
+  transition: all 0.3s ease-in;
+  position: absolute; /* its positioned relative to the nav-links*/
+  height: 4px;
+  width: 0; /* the full width will show up in hover*/
+  top: 30px;
+  left: 0;
+}
+.random-content {
+  position: absolute;
+  top: 55px;
+  left: -50px;
+  width: 400px;
+  background: #7c83fd;
+  color: #000;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: none;
+}
+.single:hover .random-content {
+  display: block;
+}
+
+.single:hover {
+  cursor: pointer;
+  color: #7c83fd;
+}

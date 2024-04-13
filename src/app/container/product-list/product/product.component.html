@@ -1,0 +1,24 @@
+<a href="#">
+  <div class="product" appHighlight>
+
+    <img [src]="product.imageUrl" [disableProduct]="!product.is_in_inventory">
+
+    <div class="product-details">
+      <h2>{{product.name}}</h2>
+      <p>{{product.description}}</p>
+    </div>
+
+    <p>Total: <span class="price">${{product.price}}</span></p>
+    <span class="add-to-cart" *ngIf="product.is_in_inventory; else notifyMe">add to cart</span>
+
+    <ng-template #notifyMe>
+      <span class="add-to-cart" [ngStyle]="{backgroundColor:'red'}">Notify Me</span>
+    </ng-template>
+
+    <div class="availability">
+      <span [ngStyle]="{fontWeight : 'bold', color : product.is_in_inventory?'green':'red'}">
+        {{product.is_in_inventory? 'Availabel In Stock':' Not Availabel In Stock'}}</span>
+    </div>
+
+  </div>
+</a>

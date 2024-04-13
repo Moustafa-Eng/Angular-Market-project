@@ -1,0 +1,16 @@
+<app-filter
+[all]="allProducts"
+[inStock]="inStock"
+[outOfStock]="outOfStock"
+(filterChanged)="showWithFilter($event)"
+>
+</app-filter>
+<div class="product-flex-container">
+  <ng-container *ngFor="let item of products">
+    <ng-container *ngIf="selectedButtonFilter === 'all' || item.is_in_inventory.toString() === selectedButtonFilter || item.is_in_inventory.toString() === selectedButtonFilter">
+      <app-product  (click)="selectedProduct = item" [product]="item" *ngIf="item.name.toLowerCase().includes(searchText)" ></app-product>
+    </ng-container>
+  </ng-container>
+</div>
+
+

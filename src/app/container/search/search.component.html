@@ -1,0 +1,5 @@
+<div class="searchBox">
+  <input type="text"  #inputSearch>
+  <button (click)="upDateSearchText()">Search</button>
+</div>
+<p class="searchBox" *ngIf="searchText">Search results For : {{searchText}}</p>
